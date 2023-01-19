@@ -1,4 +1,4 @@
-package starter.search;
+package com.travelocity.search;
 
 import net.serenitybdd.screenplay.targets.Target;
 
