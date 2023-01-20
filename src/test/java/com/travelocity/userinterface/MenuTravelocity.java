@@ -1,2 +1,8 @@
-package com.travelocity.userinterface;public class MenuTravelocity {
+package com.travelocity.userinterface;
+
+import net.serenitybdd.screenplay.targets.Target;
+
+public class MenuTravelocity {
+   public static final Target A_VUELOS = Target.the("menu de vuelos").locatedBy("//span[text()='Vuelos']/..");
+
 }
