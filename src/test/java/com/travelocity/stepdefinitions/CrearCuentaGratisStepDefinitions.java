@@ -1,43 +1,41 @@
 package com.travelocity.stepdefinitions;
 
-import com.travelocity.tasks.SeleccionarDestinoHospedaje;
-import com.travelocity.userinterface.HospedajesEncontrados;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.actors.OnStage;
-import net.serenitybdd.screenplay.ensure.Ensure;
 
+public class CrearCuentaGratisStepDefinitions {
 
-public class HospedajeStepDefinitions {
-
-    @Dado("{actor} esta en {string} con su familia")
-    public void destinoActual(Actor actor, String destino) {
-        actor.attemptsTo(
-            SeleccionarDestinoHospedaje.para(destino)
-        );
+    @Dado("{actor} quiera crear una cuenta gratis")
+    public void crearCuenta(Actor actor) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
     }
-    @Cuando("quiera reservar por {int} dias para {int} Adultos")
-    public void reservaConDiasYAdultos(Integer cantidadDias, Integer cantAdultos) {
-        OnStage.theActorInTheSpotlight().attemptsTo(
-                SeleccionarDestinoHospedaje.cantidadDiasYCantidadPersonas(cantidadDias, cantAdultos)
-        );
+    @Cuando("quiera registrarse")
+    public void registroCuenta() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
     }
-
-    @Cuando("quiera reservar por {int} dias para {int} adultos agregando auto")
-    public void reservaConOpcionDeAuto(){
-        OnStage.theActorInTheSpotlight().attemptsTo(
-//            AgregarAuto.para
-        );
-    }
-    @Entonces("debe visualizar al menos una opcion de hotel")
-    public void debeObtenerAlgunaOpcionDeHospedaje() {
-        Ensure.that(HospedajesEncontrados.DIV_HOSPEDAJES_ENCONTRADOS).values().hasSizeGreaterThan(0);
+    @Entonces("debe obtener el formulario de registro")
+    public void obtenerFormulario() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
     }
 
-    @Entonces("debe visualizar al menos una opcion de paquete")
-    public void debeVisualizarAlgunaOpcionDePaquete() {
-
+    @Dado("{actor} tiene todos los campos del formulario completos")
+    public void formularioCompleto(Actor actor) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Cuando("quiera continuar")
+    public void quieraContinuar() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Entonces("debe recibir un mensaje de bienvenida")
+    public void mensajeBienvenida() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
     }
 }
