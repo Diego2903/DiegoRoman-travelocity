@@ -1,29 +1,17 @@
 # language: es
-Característica: Iniciar sesion
+Característica: Crear una cuenta gratis
 
   Escenario: crear una cuenta gratis
-    Dado que quiero crear una cuenta gratis
-    Cuando quiera registrarme
+    Dado "Diego" quiera crear una cuenta gratis
+    Cuando quiera registrarse
     Entonces debe obtener el formulario de registro
 
   @manual
-  Escenario: vuelo redondo con opcion clase economica premium
-    Dado Diego esta en "MedellÍn"
-    Cuando quiera viajar a "Cancún" por 15 dias
-    Entonces debe obtener al menos una opcion de viaje
+  Escenario: formulario de registro completo
+    Dado "Diego" tiene todos los campos del formulario completos
+    Cuando quiera continuar
+    Entonces debe recibir un mensaje de bienvenida
 
-  @manual
-  Escenario: vuelo redondo con opcion de agregar auto
-    Dado Laura esta en "MedellÍn"
-    Cuando quiera viajar a Cancun agregando un auto
-    Entonces debe obtener alguna opcion de auto
-
-  @manual
-  Escenario: vuelo redondo con opcion de agregar hospedaje
-    Dado "Diego" esta en "Medellin"
-    Cuando quiera viajar a Cancun con hospedaje por 8 dias
-    Entonces debe obtener alguna opcion de vuelo
-    Y debe obtener alguna opcion de hospedaje
 
 
 

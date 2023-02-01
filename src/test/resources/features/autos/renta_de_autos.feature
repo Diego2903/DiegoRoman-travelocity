@@ -1,33 +1,24 @@
 # language: es
-Característica: Vuelos redondos
-  Yo como viajero
-  quiero diseñar vuelos de ida y regreso
-  para facilitar mis viajes de paseo
+Característica: Renta de autos
 
-
-  Escenario: vuelo redondo con opciones por defecto
-    Dado Yoimar esta en "Medellín"
-    Cuando quiera viajar a "Cancún" por 15 dias
-    Entonces debe obtener alguna opcion de vuelo
+  Escenario: renta de autos con opciones por defecto
+    Dado "Diego" esta en "Cali" y quiera rentar un auto con entrega a las "1200PM"
+    Cuando realiza el proceso de reserva para 8 dias con entrega en "Cali" con hora de devolucion a las "1200PM"
+    Entonces debe obtener al menos una opcion de auto
 
   @manual
-  Escenario: vuelo redondo con opcion clase economica premium
-    Dado Diego esta en "MedellÍn"
-    Cuando quiera viajar a "Cancún" por 15 dias
-    Entonces debe obtener al menos una opcion de viaje
+  Escenario: renta de autos con codigo de descuento
+    Dado "Fernando" esta en "Paris" desea rentar un auto aplicando un codigo de descuento
+    Cuando realice el proceso para aplicar el descuento
+    Entonces debe obtener al menos una opcion con el descuento aplicado
 
-  @manual
-  Escenario: vuelo redondo con opcion de agregar auto
-    Dado Laura esta en "MedellÍn"
-    Cuando quiera viajar a Cancun agregando un auto
-    Entonces debe obtener alguna opcion de auto
 
-  @manual
-  Escenario: vuelo redondo con opcion de agregar hospedaje
-    Dado "Diego" esta en "Medellin"
-    Cuando quiera viajar a Cancun con hospedaje por 8 dias
-    Entonces debe obtener alguna opcion de vuelo
-    Y debe obtener alguna opcion de hospedaje
+  Escenario: renta de autos con opcion incluir tarifa para socios
+    Dado "Fernan" esta en "Inglaterra" desea rentar un auto con tarifas para socios AARP
+    Cuando realice el proceso de reserva para 8 dias con entrega en "Inglaterra" e incluyendo las tarifas
+    Entonces debe obtener al menos una opcion con las tarifas para socios AARP
+
+
 
 
 

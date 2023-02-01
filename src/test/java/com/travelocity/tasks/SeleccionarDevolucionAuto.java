@@ -1,23 +1,41 @@
 package com.travelocity.tasks;
 
-import com.travelocity.pageobjects.TravelocityHomePage;
+
 import com.travelocity.userinterface.DetalleAutos;
-import com.travelocity.userinterface.DetalleVuelos;
-import com.travelocity.userinterface.MenuTravelocity;
+import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.Open;
+import net.serenitybdd.screenplay.actions.SelectFromOptions;
+import net.serenitybdd.screenplay.ui.Dropdown;
 import org.openqa.selenium.Keys;
 
-public class SeleccionarEntregaAuto {
-    public static Performable para(String entregaAuto){
-        return Task.where("{0} abre travelocity en autos y selecciona Autos {1}",
-                Open.browserOn().the(TravelocityHomePage.class),
-                Click.on(MenuTravelocity.A_AUTOS),
-                Click.on(DetalleAutos.BUT_ENTREGA_AUTO),
-                Enter.theValue(entregaAuto).into(DetalleAutos.INP_ENTREGA_AUTO).thenHit(Keys.ENTER)
-                );
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+
+public class SeleccionarDevolucionAuto implements Task{
+
+    private Integer diasAlquiler;
+    private String devolucionAuto;
+
+    public SeleccionarDevolucionAuto(Integer diasAlquiler, String devolucionAuto) {
+        this.diasAlquiler = diasAlquiler;
+        this.devolucionAuto = devolucionAuto;
+    }
+
+    @Override
+    public <T extends Actor> void performAs(T actor) {
+        actor.attemptsTo(
+                Click.on(DetalleAutos.BUT_DEVOLUCION_AUTO),
+                Enter.theValue(devolucionAuto).into(DetalleAutos.INP_DEVOLUCION_AUTO).thenHit(Keys.ENTER),
+                Click.on(DetalleAutos.SELECCIONAR_FECHA_ENTREGA),
+                Click.on(DetalleAutos.SELECCIONAR_FECHA_DEVOLUCION),
+                Click.on(DetalleAutos.BUT_LISTO_FECHAS),
+                Click.on(DetalleAutos.BUT_BUSCAR_AUTOS)
+        );
+    }
+
+    public static Performable diasAlquilerYDevolucionAuto(Integer diasAlquiler, String devolucionAuto){
+        return instrumented(SeleccionarDevolucionAuto.class, diasAlquiler,devolucionAuto);
     }
 }

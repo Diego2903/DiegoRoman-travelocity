@@ -2,19 +2,16 @@ package com.travelocity.userinterface;
 
 import net.serenitybdd.screenplay.targets.Target;
 
-public class DetalleVuelos {
-    public static final Target BUT_ORIGEN = Target.the("button de origen").locatedBy("//button[@data-stid='location-field-leg1-origin-menu-trigger']");
-    public static final Target INP_ORIGEN = Target.the("input de origen").locatedBy("//input[@id='location-field-leg1-origin']");
-    public static final Target BUT_DESTINO = Target.the("button de destino").locatedBy("//button[@data-stid='location-field-leg1-destination-menu-trigger']");
-    public static final Target INP_DESTINO = Target.the("input de destino").locatedBy("//input[@id='location-field-leg1-destination']");
-    public static final Target SELECCIONAR_DATE_REGRESO = Target.the("selector de fecha salida").locatedBy("//button[@id='d2-btn']");
-    public static final Target DATE_REGRESO = Target.the("calendar fecha regreso").locatedByFirstMatching("//button[@data-day='17']");
-    public static final Target BUT_SELECCIONAR_CLASE_VUELO = Target.the("boton seleccionar clase vuelo").locatedBy("//button[@id='preferred-class-input-trigger']");
-    public static final Target A_SELECCIONAR_CLASE_VUELO = Target.the("Anchor seleccionar clase vuelo").locatedBy("//*[@id='preferred-class-input']/div/div");
-    public static final Target BUT_LISTO = Target.the("boton listo fecha").locatedBy("//button[@data-stid='apply-date-picker']");
-    public static final Target BUT_BUSCAR = Target.the("button buscar vuelos").locatedBy("//button[@data-testid='submit-button']");
-    public static final Target INP_CHECK_AUTO = Target.the("Input checkbox agregar auto").locatedBy("//input[@id='add-car-checkbox']");
-    public static final Target INP_CHECK_HOSPEDAJE = Target.the("Input checkbox agregar hospedaje").locatedBy("//input[@id='add-hotel-checkbox']");
-
-
+public class DetalleAutos {
+    public static final Target BUT_ENTREGA_AUTO = Target.the("button de entrega auto").locatedBy("//button[@data-stid='location-field-locn-menu-trigger']");
+    public static final Target INP_ENTREGA_AUTO = Target.the("input entrega auto").locatedBy("//input[@id='location-field-locn']");
+    public static final Target BUT_DEVOLUCION_AUTO = Target.the("button de Devolucion auto").locatedBy("//button[@data-stid='location-field-loc2-menu-trigger']");
+    public static final Target INP_DEVOLUCION_AUTO = Target.the("input devolucion auto").locatedBy("//input[@id='location-field-loc2']");
+    public static final Target SELECCIONAR_FECHA_ENTREGA = Target.the("selector de fecha de entrega").locatedBy("//button[@id='d1-btn']");
+    public static final Target SELECCIONAR_FECHA_DEVOLUCION = Target.the("selector fecha devolucion").locatedByFirstMatching("//button[@data-day='17']");
+    public static final Target BUT_LISTO_FECHAS = Target.the("button listo fechas").locatedBy("//button[@data-stid='apply-date-picker']");
+    public static final Target SELECT_HORA_ENTREGA = Target.the("select de horas de entrega").locatedBy("//select[@aria-label='Hora de entrega']");
+    public static final Target SELECT_HORA_DEVOLUCION = Target.the("select de horas de devolucion").locatedBy("//select[@aria-label='Hora de devolución']");
+    public static final Target BUT_BUSCAR_AUTOS = Target.the("boton buscar autos").locatedBy("//button[@data-testid='submit-button']");
+    public static final Target INP_CHECK_AUTO = Target.the("input check de auto").locatedBy("//input[@id='aarp-checkbox-toggle']/../..");
 }

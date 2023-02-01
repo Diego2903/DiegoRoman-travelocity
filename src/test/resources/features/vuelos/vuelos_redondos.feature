@@ -5,28 +5,27 @@ Característica: Vuelos redondos
   para facilitar mis viajes de paseo
 
   Escenario: vuelo redondo con opciones por defecto
-    Dado Yoimar esta en "Medellín"
+    Dado "Yoimar" esta en "Medellín"
     Cuando quiera viajar a "Cancún" por 15 dias
-    Entonces debe obtener alguna opcion de vuelo
+    Entonces debe obtener al menos una opcion de vuelo
 
-  @manual
+
   Escenario: vuelo redondo con opcion clase economica premium
-    Dado Diego esta en "MedellÍn"
-    Cuando quiera viajar a "Cancún" por 15 dias
-    Entonces debe obtener al menos una opcion de viaje
+    Dado Diego esta en "MedellÍn" y desea tomar un vuelo en "Clase económica Premium"
+    Cuando realice el proceso para viajar a "Cancun" por 5 dias
+    Entonces debe obtener al menos una opcion de vuelo en clase economica premium
 
-  @manual
+
   Escenario: vuelo redondo con opcion de agregar auto
-    Dado Laura esta en "MedellÍn"
-    Cuando quiera viajar a Cancun agregando un auto
-    Entonces debe obtener alguna opcion de auto
+    Dado Eliza esta en "Medellin" y desea viajar
+    Cuando realice el proceso para viajar a "Cancun" por 8 dias con la opcion agregar un auto
+    Entonces debe obtener al menos una opcion de vuelo con auto incluido
 
   @manual
   Escenario: vuelo redondo con opcion de agregar hospedaje
-    Dado Diego esta en Medellin
-    Cuando quiera viajar a Cancun con hospedaje por 8 dias
-    Entonces debe obtener alguna opcion de vuelo
-    Y debe obtener alguna opcion de hospedaje
+    Dado "Diego" esta en "Medellin" y desea viajar con hospedaje incluido
+    Cuando realice el proceso para viajar a "Cancun" por 8 dias con hospedaje por 7 dias
+    Entonces debe obtener al menos una opcion de vuelo con hospedaje incluido
 
 
 
