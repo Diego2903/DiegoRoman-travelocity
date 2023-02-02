@@ -6,13 +6,13 @@ Característica: Hospedaje
 
   Escenario: hospedaje en Cargatena con opciones por defecto
     Dado "Diego" esta en "new york" y desea realizar una reserva en un hotel de la cuidad
-    Cuando realice el proceso de reserva por 8 dias para 2 Adultos
+    Cuando realice el proceso de reserva por 8 dias desde la fecha actual para 3 Adultos
     Entonces debe visualizar al menos una opcion de hotel
 
 
   Escenario: hospedaje en Cartagena con opcion de agregar auto
     Dado "Fernando" esta en "Cartagena" y desea realizar una reserva de un hotel con auto incluido
-    Cuando realice el proceso de reserva por 8 dias para 2 adultos con la opcion de agregar auto
+    Cuando realice el proceso de reserva por 8 dias desde la fecha actual para 3 adultos con la opcion de agregar auto
     Entonces debe visualizar al menos una opcion de hotel con auto incluido
 
   @manual

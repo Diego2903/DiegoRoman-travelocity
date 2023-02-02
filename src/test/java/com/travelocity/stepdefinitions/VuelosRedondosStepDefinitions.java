@@ -78,14 +78,14 @@ public class VuelosRedondosStepDefinitions {
         );
     }
     @Cuando("realice el proceso para viajar a {string} por {int} dias desde la fecha actual con hospedaje por {int} dias")
-    public void realice_el_proceso_de_para_viajar_a_cancun_con_hospedaje_por_dias(String destinoVuelo, Integer cantDias, Integer cantDiasHospedaje) {
+    public void viajeConHospedaje(String destinoVuelo, Integer cantDias, Integer cantDiasHospedaje) {
         OnStage.theActorInTheSpotlight().attemptsTo(
                 SeleccionarDestinoVuelosConHospedaje.diasHospedaje(cantDiasHospedaje),
                 SeleccionarDestinoVuelos.destinoYDias(destinoVuelo, cantDias)
         );
     }
     @Entonces("debe obtener al menos una opcion de vuelo con hospedaje incluido")
-    public void debe_obtener_al_menos_una_opcion_de_vuelo_con_hospedaje_incluido() {
+    public void opcionConHospedajeIncluido() {
         Ensure.that(VuelosEncontrados.LIST_VUELOS_ENCONTRADOS).values().hasSizeGreaterThan(0);
     }
 

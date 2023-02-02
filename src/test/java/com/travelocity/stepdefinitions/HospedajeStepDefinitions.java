@@ -21,7 +21,8 @@ public class HospedajeStepDefinitions {
             SeleccionarDestinoHospedaje.para(destino)
         );
     }
-    @Cuando("realice el proceso de reserva por {int} dias para {int} Adultos")
+
+    @Cuando("realice el proceso de reserva por {int} dias desde la fecha actual para {int} Adultos")
     public void reservaConDiasYAdultos(Integer cantidadDias, Integer cantAdultos) {
         OnStage.theActorInTheSpotlight().attemptsTo(
                 SeleccionarFechasHospedaje.diasYCantAdultos(cantidadDias, cantAdultos)
@@ -39,7 +40,7 @@ public class HospedajeStepDefinitions {
                 SeleccionarDestinoHospedaje.para(cuidadHospedaje)
         );
     }
-    @Cuando("realice el proceso de reserva por {int} dias para {int} adultos con la opcion de agregar auto")
+    @Cuando("realice el proceso de reserva por {int} dias desde la fecha actual para {int} adultos con la opcion de agregar auto")
     public void reservaConOpcionAuto(Integer diasHospedaje, Integer cantAdultos) {
         OnStage.theActorInTheSpotlight().attemptsTo(
                 Click.on(DetalleHospedaje.INP_CHECK_AUTO).afterWaitingUntilEnabled(),

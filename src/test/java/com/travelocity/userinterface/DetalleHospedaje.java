@@ -7,7 +7,6 @@ public class DetalleHospedaje {
     public static final Target BUT_DESTINO = Target.the("button de destino hospedaje").locatedBy("//button[@data-stid='location-field-destination-menu-trigger']");
     public static final Target INP_DESTINO = Target.the("input de destino").locatedBy("//input[@id='location-field-destination']");
     public static final Target SELECCIONAR_CHECK_IN = Target.the("selector de fecha de entrada").locatedBy("//button[@id='d1-btn']");
-    public static final Target SELECCIONAR_CHECK_OUT = Target.the("selector de fecha salida").locatedByFirstMatching("//button[@data-day='16']");
     public static final Target BUT_LISTO = Target.the("boton listo fecha").locatedBy("//button[@data-stid='apply-date-picker']");
     public static final Target DIV_SELECCIONAR_NUMERO_PERSONAS = Target.the("boton seleccionar numero de personas").locatedBy("//div[@id='adaptive-menu']");
     public static final Target INP_CANTIDAD_PERSONAS = Target.the("input cantidad personas").locatedBy("//input[@id='adult-input-0']/following-sibling::button");
