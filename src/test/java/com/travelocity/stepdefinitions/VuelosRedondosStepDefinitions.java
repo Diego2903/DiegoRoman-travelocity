@@ -2,6 +2,7 @@ package com.travelocity.stepdefinitions;
 
 import com.travelocity.tasks.SeleccionarClaseVuelo;
 import com.travelocity.tasks.SeleccionarDestinoVuelos;
+import com.travelocity.tasks.SeleccionarDestinoVuelosConHospedaje;
 import com.travelocity.tasks.SeleccionarOrigenVuelos;
 import com.travelocity.userinterface.DetalleVuelos;
 import com.travelocity.userinterface.VuelosEncontrados;
@@ -22,7 +23,7 @@ public class VuelosRedondosStepDefinitions {
         );
     }
 
-    @Cuando("quiera viajar a {string} por {int} dias")
+    @Cuando("quiera viajar a {string} por {int} dias desde la fecha actual")
     public void viajeDestinoConDias(String destino, Integer cantDias) {
         OnStage.theActorInTheSpotlight().attemptsTo(
             SeleccionarDestinoVuelos.destinoYDias(destino, cantDias)
@@ -41,7 +42,7 @@ public class VuelosRedondosStepDefinitions {
                 SeleccionarClaseVuelo.en(claseVuelo)
         );
     }
-    @Cuando("realice el proceso para viajar a {string} por {int} dias")
+    @Cuando("realice el proceso para viajar a {string} por {int} dias desde la fecha actual")
     public void viajeDestino(String destinoViaje, int diasViaje) {
         OnStage.theActorInTheSpotlight().attemptsTo(
                 SeleccionarDestinoVuelos.destinoYDias(destinoViaje, diasViaje)
@@ -58,7 +59,7 @@ public class VuelosRedondosStepDefinitions {
                 SeleccionarOrigenVuelos.para(origenUsuario)
         );
     }
-    @Cuando("realice el proceso para viajar a {string} por {int} dias con la opcion agregar un auto")
+    @Cuando("realice el proceso para viajar a {string} por {int} dias desde la fecha actual con la opcion agregar un auto")
     public void viajeOpcionAgregarAuto(String destinoViaje, Integer cantDias) {
         OnStage.theActorInTheSpotlight().attemptsTo(
                 Click.on(DetalleVuelos.INP_CHECK_VUELOS).afterWaitingUntilEnabled(),
@@ -76,10 +77,10 @@ public class VuelosRedondosStepDefinitions {
                 SeleccionarOrigenVuelos.para(origenUsuario)
         );
     }
-    @Cuando("realice el proceso para viajar a {string} por {int} dias con hospedaje por {int} dias")
+    @Cuando("realice el proceso para viajar a {string} por {int} dias desde la fecha actual con hospedaje por {int} dias")
     public void realice_el_proceso_de_para_viajar_a_cancun_con_hospedaje_por_dias(String destinoVuelo, Integer cantDias, Integer cantDiasHospedaje) {
         OnStage.theActorInTheSpotlight().attemptsTo(
-                Click.on(DetalleVuelos.INP_CHECK_HOSPEDAJE).afterWaitingUntilEnabled(),
+                SeleccionarDestinoVuelosConHospedaje.diasHospedaje(cantDiasHospedaje),
                 SeleccionarDestinoVuelos.destinoYDias(destinoVuelo, cantDias)
         );
     }
