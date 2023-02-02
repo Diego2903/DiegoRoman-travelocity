@@ -2,8 +2,8 @@
 Característica: Renta de autos
 
   Escenario: renta de autos con opciones por defecto
-    Dado "Diego" esta en "Cali" y quiera rentar un auto con entrega a las "1200PM"
-    Cuando realiza el proceso de reserva para 8 dias con entrega en "Cali" con hora de devolucion a las "1200PM"
+    Dado "Diego" esta en "Cali" y quiera rentar un auto con hora de entrega a las "1130AM"
+    Cuando realiza el proceso de reserva para 8 dias desde la fecha actual con entrega en "Cali" con hora de devolucion a las "1130AM"
     Entonces debe obtener al menos una opcion de auto
 
   @manual
@@ -15,7 +15,7 @@ Característica: Renta de autos
 
   Escenario: renta de autos con opcion incluir tarifa para socios
     Dado "Fernan" esta en "Inglaterra" desea rentar un auto con tarifas para socios AARP
-    Cuando realice el proceso de reserva para 8 dias con entrega en "Inglaterra" e incluyendo las tarifas
+    Cuando realice el proceso de reserva para 8 dias desde la fecha actual con entrega en "Inglaterra" e incluyendo las tarifas
     Entonces debe obtener al menos una opcion con las tarifas para socios AARP
 
 

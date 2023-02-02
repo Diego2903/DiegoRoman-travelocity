@@ -16,19 +16,18 @@ import net.serenitybdd.screenplay.ensure.Ensure;
 
 public class RentaDeAutosStepDefinitions {
 
-    @Dado("{actor} esta en {string} y quiera rentar un auto con entrega a las {string}")
+    @Dado("{actor} esta en {string} y quiera rentar un auto con hora de entrega a las {string}")
     public void origenRenta(Actor actor, String cuidadRenta, String horaEntrega) {
        actor.attemptsTo(
                SeleccionarEntregaAuto.para(cuidadRenta),
-               Click.on(DetalleAutos.SELECT_HORA_ENTREGA),
+               //Click.on(DetalleAutos.SELECT_HORA_ENTREGA),
                SelectFromOptions.byValue(horaEntrega).from(DetalleAutos.SELECT_HORA_ENTREGA)
        );
     }
-    @Cuando("realiza el proceso de reserva para {int} dias con entrega en {string} con hora de devolucion a las {string}")
+    @Cuando("realiza el proceso de reserva para {int} dias desde la fecha actual con entrega en {string} con hora de devolucion a las {string}")
     public void rentaAuto(Integer diasAlquiler, String devolucion, String horaDevolucion) {
-
         OnStage.theActorInTheSpotlight().attemptsTo(
-                Click.on(DetalleAutos.SELECT_HORA_DEVOLUCION),
+                // Click.on(DetalleAutos.SELECT_HORA_DEVOLUCION),
                 SelectFromOptions.byValue(horaDevolucion).from(DetalleAutos.SELECT_HORA_DEVOLUCION),
                 SeleccionarDevolucionAuto.diasAlquilerYDevolucionAuto(diasAlquiler,devolucion)
         );
@@ -60,7 +59,7 @@ public class RentaDeAutosStepDefinitions {
                 SeleccionarEntregaAuto.para(cuidadRenta)
         );
     }
-    @Cuando("realice el proceso de reserva para {int} dias con entrega en {string} e incluyendo las tarifas")
+    @Cuando("realice el proceso de reserva para {int} dias desde la fecha actual con entrega en {string} e incluyendo las tarifas")
     public void tarifaSocio(Integer diasAlquiler,String cuidadEntrega) {
         OnStage.theActorInTheSpotlight().attemptsTo(
                 Click.on(DetalleAutos.INP_CHECK_AUTO).afterWaitingUntilEnabled(),
