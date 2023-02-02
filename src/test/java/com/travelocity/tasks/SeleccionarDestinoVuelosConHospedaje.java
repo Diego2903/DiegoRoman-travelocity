@@ -1,48 +1,42 @@
 package com.travelocity.tasks;
 
 import com.travelocity.userinterface.DetalleVuelos;
-import com.travelocity.utils.FormateadorFecha;
+import com.travelocity.utils.SelectorDeFechas;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.ui.Button;
-import org.openqa.selenium.Keys;
 
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class SeleccionarDestinoVuelos implements Task {
+public class SeleccionarDestinoVuelosConHospedaje implements Task {
 
-    private String destino;
-    private Integer diasViaje;
+    private Integer diasHospedaje;
 
-    public SeleccionarDestinoVuelos(String destino, Integer diasViaje) {
-        this.destino = destino;
-        this.diasViaje = diasViaje;
+    public SeleccionarDestinoVuelosConHospedaje(Integer diasViaje) {
+        this.diasHospedaje = diasViaje;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
 
-        FormateadorFecha fechas = new FormateadorFecha();
+        SelectorDeFechas fechas = new SelectorDeFechas();
         String fechaInicial = fechas.getFechaInicialFormateada();
-        String fechaFinal = fechas.getFechaFinalFormateada(diasViaje);
+        String fechaFinal = fechas.getFechaFinalFormateada(diasHospedaje);
 
         actor.attemptsTo(
-                Click.on(DetalleVuelos.BUT_DESTINO),
-                Enter.theValue(this.destino).into(DetalleVuelos.INP_DESTINO).thenHit(Keys.ENTER),
-                Click.on(DetalleVuelos.BUT_ABRIR_FECHAS),
+                Click.on(DetalleVuelos.INP_CHECK_HOSPEDAJE).afterWaitingUntilEnabled(),
+                Click.on(DetalleVuelos.BUT_SELECCIONAR_CHECK_IN),
                 Click.on(Button.withAriaLabel(fechaInicial)),
                 Click.on(Button.withAriaLabel(fechaFinal)),
-                Click.on(DetalleVuelos.BUT_LISTO),
-                Click.on(DetalleVuelos.BUT_BUSCAR)
+                Click.on(DetalleVuelos.BUT_LISTO_CHECK_IN)
         );
 
     }
 
-    public static Performable destinoYDias(String destino, Integer diasViaje){
-        return instrumented(SeleccionarDestinoVuelos.class, destino, diasViaje);
+    public static Performable diasHospedaje( Integer diasHospedaje){
+        return instrumented(SeleccionarDestinoVuelosConHospedaje.class,  diasHospedaje);
     }
 }
