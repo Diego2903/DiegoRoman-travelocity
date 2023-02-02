@@ -6,6 +6,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.ui.Button;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -27,6 +28,7 @@ public class SeleccionarFechasHospedaje implements Task {
                 Click.on(DetalleHospedaje.SELECCIONAR_CHECK_OUT),
                 Click.on(DetalleHospedaje.BUT_LISTO),
                 Click.on(DetalleHospedaje.DIV_SELECCIONAR_NUMERO_PERSONAS),
+                Click.on(DetalleHospedaje.INP_CANTIDAD_PERSONAS),
                 Click.on(DetalleHospedaje.BUT_LISTO_NUMERO_PERSONAS),
                 Click.on(DetalleHospedaje.BUT_BUSCAR)
         );
